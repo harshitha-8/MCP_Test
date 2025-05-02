@@ -1,9 +1,8 @@
-<<<<<<< HEAD
+
 # MCP in 10 Minutes
 Learn how to build a MCP Server for Yahoo Finance (and just about anything else) in 10 minutes. 
 
-## See it live and in action 📺
-<img src="https://i.imgur.com/P1uv4QN.jpeg"/>
+
 
 # Startup 🚀
 1. Clone this repository `git clone https://github.com/nicknochnack/MCPin10` and go into it `cd MCPin10`
@@ -18,11 +17,3 @@ Learn how to build a MCP Server for Yahoo Finance (and just about anything else)
 # Other stuff
 - Installing Langflow: https://docs.langflow.org/get-started-installation
 
-# Who, When, Why?
-
-👨🏾‍💻 Author: Nick Renotte <br />
-📅 Version: 1.x<br />
-📜 License: This project is licensed under the MIT License </br>
-=======
-# MCP_Test
->>>>>>> ce9ef40d1a3709d3526b29963c0afe0ae9186dce
