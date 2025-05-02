@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # MCP in 10 Minutes
 Learn how to build a MCP Server for Yahoo Finance (and just about anything else) in 10 minutes. 
 
@@ -22,3 +23,6 @@ Learn how to build a MCP Server for Yahoo Finance (and just about anything else)
 👨🏾‍💻 Author: Nick Renotte <br />
 📅 Version: 1.x<br />
 📜 License: This project is licensed under the MIT License </br>
+=======
+# MCP_Test
+>>>>>>> ce9ef40d1a3709d3526b29963c0afe0ae9186dce

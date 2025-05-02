@@ -16,9 +16,25 @@ def stock_summary(stock_data:str) -> str:
                 Data {stock_data}"""
                 
 # Add in a resource function
+#import chromadb
+#chroma_client = chromadb.PersistentClient(path="ticker_db")
+#collection = chroma_client.get_collection(name="stock_tickers")
 import chromadb
+import os
 chroma_client = chromadb.PersistentClient(path="ticker_db")
-collection = chroma_client.get_collection(name="stock_tickers")
+
+# First, try to delete the existing collection if it's problematic
+try:
+    chroma_client.delete_collection(name="stock_tickers")
+except Exception as e:
+    print(f"Note: {e}")
+
+# Then create a new collection with proper settings
+collection = chroma_client.create_collection(
+    name="stock_tickers",
+    metadata={"hnsw:num_threads": 2}  # Try even fewer threads
+)
+
 @mcp.resource("tickers://search/{stock_name}")
 def list_tickers(stock_name:str)->str: 
     """This resource allows you to find a stock ticker by passing through a stock name e.g. Google, Bank of America etc. 
@@ -41,9 +57,7 @@ def list_tickers(stock_name:str)->str:
 def stock_price(stock_ticker: str) -> str:
     """This tool returns the last known price for a given stock ticker.
     Args:
-        stock_ticker: a alphanumeric stock ticker 
-        Example payload: "NVDA"
-
+            Example payload: "NVDA"
     Returns:
         str:"Ticker: Last Price" 
         Example Respnse "NVDA: $100.21" 
